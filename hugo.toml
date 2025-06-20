@@ -4,6 +4,9 @@ title = 'Calligraphy Across the Caliphates'
 theme = ''  # Empty if no theme is used
 enableRobotsTXT = true
 
+[module]
+  disable = true
+
 [params]
   custom_css = ["custom.css"]
 
