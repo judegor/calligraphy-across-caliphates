@@ -1,5 +1,7 @@
 {{ define "main" }}
-  <div class="style-header" style="background-image: url('/images/{{ .File.BaseFileName }}-cover.jpg');">
+  {{/* Compute cover image path respecting baseURL */}}
+  {{ $cover := printf "images/%s-cover.jpg" .File.BaseFileName | relURL }}
+  <div class="style-header" style="background-image: url('{{ $cover }}');">
     <div class="style-header-overlay">
       <h1 class="style-title">{{ .Title }}</h1>
     </div>
@@ -12,8 +14,8 @@
       <div class="style-gallery">
         <div class="style-gallery-track">
           {{ range . }}
-            <a href="{{ .link }}" target="_blank" rel="noopener">
-              <img src="{{ .src }}" alt="{{ .alt }}">
+            <a href="{{ .link | relURL }}" target="_blank" rel="noopener">
+              <img src="{{ printf "images/%s" .src | relURL }}" alt="{{ .alt }}">
             </a>
           {{ end }}
         </div>
