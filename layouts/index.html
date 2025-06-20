@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="homepage-wrapper">
+
+  <p class="project-description">
+    This digital humanities project explores the development and use of Islamic calligraphy from the 7th to the 19th century
+    across different regions and empires.
+  </p>
+
+  <div class="grid-container">
+    {{ range site.Data.styles }}
+      <a href="/styles/{{ .slug }}" class="grid-box {{ .slug }}-box">
+        <div class="grid-overlay"></div>
+        <span class="grid-label">{{ .name }}</span>
+      </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

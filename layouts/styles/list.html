@@ -1,0 +1,10 @@
+{{ define "main" }}
+<section class="style-list">
+  <h1>Calligraphy Styles</h1>
+  <ul>
+    {{ range .Pages }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

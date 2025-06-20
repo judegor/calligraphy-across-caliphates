@@ -1,0 +1,23 @@
+{{ define "main" }}
+  <div class="style-header" style="background-image: url('/images/{{ .File.BaseFileName }}-cover.jpg');">
+    <div class="style-header-overlay">
+      <h1 class="style-title">{{ .Title }}</h1>
+    </div>
+  </div>
+
+  <div class="style-content">
+    {{ .Content }}
+
+    {{ with .Params.gallery }}
+      <div class="style-gallery">
+        <div class="style-gallery-track">
+          {{ range . }}
+            <a href="{{ .link }}" target="_blank" rel="noopener">
+              <img src="{{ .src }}" alt="{{ .alt }}">
+            </a>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+{{ end }}
