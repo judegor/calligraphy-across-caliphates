@@ -24,7 +24,7 @@ jobs:
       - name: Build site
         run: hugo --baseURL "https://aibaniz.github.io/calligraphy-across-caliphates/"
         env:
-          HUGO_MODULE_DISABLE: true
+          HUGO_MODULE_DISABLE: "true"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -32,6 +32,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
-
-
-
