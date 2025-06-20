@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Styles on Calligraphy Across the Caliphates</title>
+    <link>https://aibaniz.github.io/calligraphy-across-caliphates/styles/</link>
+    <description>Recent content in Styles on Calligraphy Across the Caliphates</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://aibaniz.github.io/calligraphy-across-caliphates/styles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kufic</title>
+      <link>https://aibaniz.github.io/calligraphy-across-caliphates/styles/kufic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://aibaniz.github.io/calligraphy-across-caliphates/styles/kufic/</guid>
+      <description>&lt;p&gt;Kufic is the earliest angular script style, developed in the 7th century&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Maghribi</title>
+      <link>https://aibaniz.github.io/calligraphy-across-caliphates/styles/maghribi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://aibaniz.github.io/calligraphy-across-caliphates/styles/maghribi/</guid>
+      <description>&lt;p&gt;Maghribi script developed in North Africa and al-Andalus. It is marked by wide loops, a sloping baseline, and distinctive letter shapes, making it visually unique among Islamic scripts.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Muhaqqaq</title>
+      <link>https://aibaniz.github.io/calligraphy-across-caliphates/styles/muhaqqaq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://aibaniz.github.io/calligraphy-across-caliphates/styles/muhaqqaq/</guid>
+      <description>&lt;p&gt;Muhaqqaq &amp;hellip;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Naskh</title>
+      <link>https://aibaniz.github.io/calligraphy-across-caliphates/styles/naskh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://aibaniz.github.io/calligraphy-across-caliphates/styles/naskh/</guid>
+      <description>&lt;p&gt;Naskh is a rounded, legible script that became the standard for copying the Qur’ān and everyday documents. Developed in the 10th century, it remains widely used in printed Arabic texts.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nastaʿlīq</title>
+      <link>https://aibaniz.github.io/calligraphy-across-caliphates/styles/nastaliq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://aibaniz.github.io/calligraphy-across-caliphates/styles/nastaliq/</guid>
+      <description>&lt;p&gt;Nastaʿlīq is a flowing script developed in Persianate regions. Known for its diagonal slant and elegance, it became the principal script for Persian poetry and literature.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Thuluth</title>
+      <link>https://aibaniz.github.io/calligraphy-across-caliphates/styles/thuluth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://aibaniz.github.io/calligraphy-across-caliphates/styles/thuluth/</guid>
+      <description>&lt;p&gt;Thuluth is a decorative script known for its large size and elegant curves. It was often used for architectural inscriptions, manuscript headings, and religious texts.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
