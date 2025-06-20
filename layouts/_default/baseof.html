@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ .Title }}</title>
-  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <title>{{ block "title" . }}{{ .Title }} – {{ .Site.Title }}{{ end }}</title>
+  <link rel="icon" type="image/png" href="{{ "images/favicon.png" | relURL }}" />
 
   <!-- Font import for EB Garamond -->
-   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/css/custom.css" />
+  <!-- Custom site stylesheet -->
+  <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}" />
+
+  {{ block "head" . }}{{ end }}
 </head>
 <body>
   {{ partial "header.html" . }}
