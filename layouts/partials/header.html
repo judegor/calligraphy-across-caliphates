@@ -1,15 +1,25 @@
 <header class="header-wrapper">
-  <h1 class="project-title">Calligraphy Across the Caliphates</h1>
-  <img src="/images/project_logo.png" alt="Project Logo" class="project-logo">
+  <h1 class="project-title">{{ .Site.Title }}</h1>
+  <img
+    src="{{ "images/project_logo.png" | relURL }}"
+    alt="Project Logo"
+    class="project-logo"
+  >
+
   <nav class="nav-menu">
-    <a href="/project" class="nav-link">Project</a>
-    <a href="/timeline" class="nav-link">Timeline</a>
-    <a href="/map" class="nav-link">Map</a>
-    <a href="/references" class="nav-link">References</a>
-    <a href="/team" class="nav-link">Team</a>
-    <a href="/" class="nav-link" title="Home">
-      <img src="/images/home-icon.svg" alt="Home" class="home-icon">
+    <a href="{{ "/project" | relURL }}"    class="nav-link">Project</a>
+    <a href="{{ "/timeline" | relURL }}"   class="nav-link">Timeline</a>
+    <a href="{{ "/map" | relURL }}"        class="nav-link">Map</a>
+    <a href="{{ "/references" | relURL }}" class="nav-link">References</a>
+    <a href="{{ "/team" | relURL }}"       class="nav-link">Team</a>
+    <a href="{{ "/" | relURL }}"           class="nav-link" title="Home">
+      <img
+        src="{{ "images/home-icon.svg" | relURL }}"
+        alt="Home"
+        class="home-icon"
+      >
     </a>
   </nav>
+
   <div class="curve"></div>
 </header>
