@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{/* Compute cover image path respecting baseURL */}}
+  {{/* Compute and apply cover image path respecting baseURL */}}
   {{ $cover := printf "images/%s-cover.jpg" .File.BaseFileName | relURL }}
   <div class="style-header" style="background-image: url('{{ $cover }}');">
     <div class="style-header-overlay">
