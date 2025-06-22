@@ -7,18 +7,18 @@
   >
 
   <nav class="nav-menu">
-    <a href="{{ "/project" | relURL }}"    class="nav-link">Project</a>
-    <a href="{{ "/timeline" | relURL }}"   class="nav-link">Timeline</a>
-    <a href="{{ "/map" | relURL }}"        class="nav-link">Map</a>
-    <a href="{{ "/references" | relURL }}" class="nav-link">References</a>
-    <a href="{{ "/team" | relURL }}"       class="nav-link">Team</a>
-    <a href="{{ "/" | relURL }}"           class="nav-link" title="Home">
-      <img
-        src="{{ "images/home-icon.svg" | relURL }}"
-        alt="Home"
-        class="home-icon"
-      >
-    </a>
+    <a href="{{ "/project" | absURL }}"    class="nav-link">Project</a>
+<a href="{{ "/timeline" | absURL }}"   class="nav-link">Timeline</a>
+<a href="{{ "/map" | absURL }}"        class="nav-link">Map</a>
+<a href="{{ "/references" | absURL }}" class="nav-link">References</a>
+<a href="{{ "/team" | absURL }}"       class="nav-link">Team</a>
+<a href="{{ "/" | absURL }}"           class="nav-link" title="Home">
+  <img
+    src="{{ "images/home-icon.svg" | relURL }}"
+    alt="Home"
+    class="home-icon"
+  >
+</a>
   </nav>
 
   <div class="curve"></div>
