@@ -7,8 +7,13 @@
   </p>
 
   <div class="grid-container">
-    {{ range site.Data.styles }}
-      <a href="/styles/{{ .slug }}" class="grid-box {{ .slug }}-box">
+    {{ range .Site.Data.styles }}
+      {{ $cover := printf "images/%s-cover.jpg" .slug }}
+      <a
+        href="{{ printf "/styles/%s" .slug | relURL }}"
+        class="grid-box {{ .slug }}-box"
+        style='background-image: url("{{ $cover | relURL }}");'
+      >
         <div class="grid-overlay"></div>
         <span class="grid-label">{{ .name }}</span>
       </a>
