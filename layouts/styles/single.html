@@ -15,7 +15,7 @@
         <div class="style-gallery-track">
           {{ range . }}
             <a href="{{ .link }}" target="_blank" rel="noopener">
-              <img src="{{ printf "/images/%s" .src | absURL }}" alt="{{ .alt }}">
+              <img src="{{ printf "images/%s" .src | relURL }}" alt="{{ .alt }}">
             </a>
           {{ end }}
         </div>
