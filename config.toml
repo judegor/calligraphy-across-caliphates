@@ -1,4 +1,4 @@
-baseURL = 'https://aibaniz.github.io/calligraphy-across-caliphates/'
+baseURL = "https://aibaniz.github.io/calligraphy-across-caliphates/"
 languageCode = 'en-us'
 title = 'Calligraphy Across the Caliphates'
 enableRobotsTXT = true
@@ -7,7 +7,7 @@ enableRobotsTXT = true
   disable = true
 
 [params]
-  custom_css = ["custom.css"]
+  custom_css = ["css/custom.css"]
 
 [markup]
   [markup.goldmark]
