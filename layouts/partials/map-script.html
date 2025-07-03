@@ -3,7 +3,7 @@
 <!-- ✅ Стили -->
 <style>
   body {
-    background-image: url('/images/parchment-overlay.png');
+    background-image: url('{{ "images/parchment-overlay.png" | relURL }}');
     background-repeat: repeat;
     background-size: cover;
     background-blend-mode: multiply;
@@ -204,8 +204,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   zIndex: 1
 }).addTo(map);
 
-  const papyrus = L.imageOverlay(
-    '{{ "images/papyrus-texture.jpg" | relURL }}'
+const papyrus = L.imageOverlay(
+ '{{ "images/papyrus-texture.jpg" | relURL }}',
   [[-90, -180], [90, 180]],
   {
     opacity: 0.4,
