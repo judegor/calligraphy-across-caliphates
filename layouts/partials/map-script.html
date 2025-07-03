@@ -205,7 +205,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
   const papyrus = L.imageOverlay(
-    '{{ "images/papyrus-texture.jpg" | absURL }}',
+    '{{ "images/papyrus-texture.jpg" | relURL }}'
   [[-90, -180], [90, 180]],
   {
     opacity: 0.4,

@@ -1,11 +1,7 @@
 {{ define "main" }}
-  <main>
-    {{ .Content }}
-
-    <!-- тут единственный контейнер -->
-    <div id="map" style="height: 600px;"></div>
-
-    <!-- и тут единственный вызов вашего JS -->
-    {{ partial "map-script.html" . }}
-  </main>
+<main>
+  {{ .Content }}
+  <div id="map" style="height: 600px;"></div>
+  {{ partial "map-script.html" . }}
+</main>
 {{ end }}
