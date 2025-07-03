@@ -222,7 +222,7 @@ const scriptGroups = {};
 const periodGroups = {};
 let resetTimeout = null;
 
-fetch('{{ "data/mapdata.json" | absURL }}')
+fetch('{{ "data/mapdata.json" | relURL }}')
   .then(response => response.json())
   .then(data => {
     const legend = document.getElementById('map-legend');

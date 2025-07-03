@@ -273,7 +273,7 @@ const scriptGroups = {};
 const periodGroups = {};
 let resetTimeout = null;
 
-fetch('https:\/\/aibaniz.github.io\/calligraphy-across-caliphates\/data\/mapdata.json')
+fetch('\/calligraphy-across-caliphates\/data\/mapdata.json')
   .then(response => response.json())
   .then(data => {
     const legend = document.getElementById('map-legend');
