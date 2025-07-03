@@ -1,0 +1,320 @@
+<link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+
+<!-- ✅ Стили -->
+<style>
+  body {
+    background-image: url('/images/parchment-overlay.png');
+    background-repeat: repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    margin: 0;
+    padding: 0;
+  }
+
+  main .Content {
+    margin-top: 40px;
+  }
+
+  #map-container {
+    position: relative;
+    width: 96%;
+    margin: 40px auto 60px auto;
+    border-radius: 12px;
+    border: 2px solid rgba(210, 180, 140, 0.6);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  }
+
+  #map {
+    height: 600px;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    border-radius: 12px;
+    z-index: 0;
+  }
+
+  #map.loaded {
+    opacity: 1;
+  }
+
+  #map-legend {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(245, 235, 220, 0.92);
+    border: 1px solid #bba88a;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-family: 'Amiri', serif;
+    font-size: 14px;
+    color: #333;
+    z-index: 999;
+  }
+
+  .dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+
+  #filters {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(245, 235, 220, 0.9);
+    padding: 10px;
+    border: 1px solid #bba88a;
+    border-radius: 8px;
+    font-family: 'Amiri', serif;
+    font-size: 14px;
+    color: #333;
+    z-index: 1000;
+  }
+
+  #filters label {
+    display: block;
+    margin-bottom: 4px;
+    cursor: pointer;
+  }
+
+  .leaflet-popup-content-wrapper {
+    background: #f5ede2 !important;
+    border: 1px solid #cdbba7;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-family: 'Amiri', serif;
+    color: #3a2d23;
+  }
+
+  .leaflet-popup-tip {
+    background: #f5ede2 !important;
+  }
+
+  .leaflet-popup-content {
+    margin: 8px 12px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .leaflet-popup-content b {
+    font-size: 17px;
+    color: #2e1d12;
+  }
+
+  .leaflet-popup-content i {
+    color: #6e5845;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  #reset-button {
+    position: absolute;
+    top: 20px;
+    right: 165px;
+    z-index: 1001;
+    background: rgba(245, 235, 220, 0.92);
+    border: 1px solid #bba88a;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-family: 'Amiri', serif;
+    font-size: 13px;
+    cursor: pointer;
+    color: #333;
+    transition: background 0.3s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+  #reset-button:hover {
+    background: rgba(245, 235, 220, 1);
+  }
+
+  .leaflet-control-attribution {
+    font-family: 'Amiri', serif !important;
+    font-size: 12px !important;
+    color: #444 !important;
+    background: rgba(245, 235, 220, 0.7) !important;
+    border-radius: 4px !important;
+    padding: 2px 6px !important;
+    box-shadow: none !important;
+  }
+
+  .period-btn {
+    margin: 4px;
+    padding: 6px 12px;
+    background: #f5ede2;
+    border: 1px solid #bba88a;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #3a2d23;
+  }
+  .period-btn:hover {
+    background: #e5dbc9;
+  }
+  .period-btn.active {
+    background: #d4c4af;
+    font-weight: bold;
+  }
+</style>
+
+<div id="map-container">
+  <div id="reset-button">↺ Reset View</div>
+  <div id="filters"></div>
+  <div id="map"></div>
+  <div id="map-legend"></div>
+</div>
+
+<div id="timeline" style="margin: 20px auto; text-align: center; font-family: 'Amiri', serif;">
+  <button class="period-btn" data-period="late 7th c.">late 7th c.</button>
+  <button class="period-btn" data-period="10th c.">10th c.</button>
+  <button class="period-btn" data-period="10th–11th c.">10th–11th c.</button>
+  <button class="period-btn" data-period="11th c.">11th c.</button>
+  <button class="period-btn" data-period="11th–12th c.">11th–12th c.</button>
+  <button class="period-btn" data-period="12th c.">12th c.</button>
+  <button class="period-btn" data-period="13th c.">13th c.</button>
+  <button class="period-btn" data-period="13th–14th c.">13th–14th c.</button>
+  <button class="period-btn" data-period="13th–15th c.">13th–15th c.</button>
+  <button class="period-btn" data-period="14th–15th c.">14th–15th c.</button>
+  <button class="period-btn" data-period="15th c.">15th c.</button>
+  <button class="period-btn" data-period="16th c.">16th c.</button>
+  <button class="period-btn" data-period="16th–17th c.">16th–17th c.</button>
+  <button class="period-btn" data-period="17th c.">17th c.</button>
+  <button class="period-btn" data-period="18th–19th c.">18th–19th c.</button>
+  <button class="period-btn" data-period="19th c.">19th c.</button>
+</div>
+
+<!-- Leaflet -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<script>
+const initialView = {
+  center: [31.5, 30],
+  zoom: 4
+};
+
+const map = L.map('map').setView(initialView.center, initialView.zoom);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: 'Map data © <span style="font-family:Amiri;">OpenStreetMap</span> contributors',
+  zIndex: 1
+}).addTo(map);
+
+  const papyrus = L.imageOverlay(
+    '{{ "images/papyrus-texture.jpg" | absURL }}',
+  [[-90, -180], [90, 180]],
+  {
+    opacity: 0.4,
+    interactive: false,
+    zIndex: 2
+  }
+).addTo(map);
+
+window.addEventListener('load', () => {
+  document.getElementById('map').classList.add('loaded');
+});
+
+const scriptGroups = {};
+const periodGroups = {};
+let resetTimeout = null;
+
+fetch('{{ "data/mapdata.json" | absURL }}')
+  .then(response => response.json())
+  .then(data => {
+    const legend = document.getElementById('map-legend');
+    const filters = document.getElementById('filters');
+
+    data.forEach(scriptEntry => {
+      const { script, description, color, locations } = scriptEntry;
+
+      const legendItem = document.createElement('div');
+      legendItem.innerHTML = `<span class="dot" style="background:${color};"></span> ${script}`;
+      legend.appendChild(legendItem);
+
+      const checkbox = document.createElement('label');
+      checkbox.innerHTML = `
+        <input type="checkbox" value="${script}" checked onchange="toggleScript('${script}')"> ${script}
+      `;
+      filters.appendChild(checkbox);
+
+      scriptGroups[script] = [];
+
+      locations.forEach(loc => {
+        if (loc.lat && loc.lng) {
+          const marker = L.circleMarker([loc.lat, loc.lng], {
+            radius: 8,
+            fillColor: color,
+            color: "#000",
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.8
+          }).addTo(map);
+
+          marker.bindPopup(`
+            <div style="font-family: 'Amiri', serif; font-size: 16px; line-height: 1.4; color: #3a2d23;">
+              <b style="font-size: 18px;">${script}</b><br>
+              <span style="color: #666;">${loc.name}</span><br>
+              <i>${description}</i>
+            </div>
+          `);
+
+          marker.on('click', () => {
+            map.setView(marker.getLatLng(), 7, { animate: true });
+            if (resetTimeout) clearTimeout(resetTimeout);
+            resetTimeout = setTimeout(() => {
+              map.setView(initialView.center, initialView.zoom, { animate: true });
+            }, 6000);
+          });
+
+          scriptGroups[script].push(marker);
+
+          const period = loc.period || 'unknown';
+          if (!periodGroups[period]) {
+            periodGroups[period] = [];
+          }
+          periodGroups[period].push(marker);
+        }
+      });
+    });
+  })
+  .catch(error => {
+    console.error('Ошибка при загрузке mapdata.json:', error);
+  });
+
+function toggleScript(script) {
+  const checkbox = document.querySelector(`#filters input[value="${script}"]`);
+  const visible = checkbox?.checked ?? true;
+  scriptGroups[script].forEach(marker => {
+    if (visible) {
+      marker.addTo(map);
+    } else {
+      map.removeLayer(marker);
+    }
+  });
+}
+
+document.getElementById('reset-button').addEventListener('click', () => {
+  if (resetTimeout) clearTimeout(resetTimeout);
+  map.setView(initialView.center, initialView.zoom, { animate: true });
+});
+
+// Таймлайн: фильтрация по периоду
+const buttons = document.querySelectorAll('.period-btn');
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const selectedPeriod = btn.getAttribute('data-period');
+    Object.values(scriptGroups).flat().forEach(marker => map.removeLayer(marker));
+
+    if (periodGroups[selectedPeriod]) {
+      periodGroups[selectedPeriod].forEach(marker => marker.addTo(map));
+    }
+  });
+});
+</script>
