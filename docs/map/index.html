@@ -41,16 +41,13 @@
   
 <main>
   <h2 id="visualizing-calligraphy-across-regions">Visualizing Calligraphy Across Regions</h2>
-<p>This section will display a map showing where various styles of Islamic calligraphy emerged and flourished — from Andalusia to Persia and beyond.</p>
-<p>🗺️ An interactive map will soon let you explore sites, schools, and artworks by region.</p>
 
-  <div id="map" style="height: 600px;"></div>
   <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
 
 
 <style>
   body {
-    background-image: url('/images/parchment-overlay.png');
+    background-image: url('/calligraphy-across-caliphates/images/parchment-overlay.png');
     background-repeat: repeat;
     background-size: cover;
     background-blend-mode: multiply;
@@ -251,8 +248,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   zIndex: 1
 }).addTo(map);
 
-  const papyrus = L.imageOverlay(
-    '\/calligraphy-across-caliphates\/images\/papyrus-texture.jpg'
+const papyrus = L.imageOverlay(
+  '\/calligraphy-across-caliphates\/images\/papyrus-texture.jpg',
   [[-90, -180], [90, 180]],
   {
     opacity: 0.4,
