@@ -1,36 +1,249 @@
-<div id="timeline-wrapper">
-  <h2 id="timeline-title">Calligraphy Across Caliphates</h2>
-  <iframe
-    class="timeline-embed"
-    src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vSlxueGYacfZmn6eS8S1EJpXjVfcvzMJAAPFcdchvj6DHfFoARDwUW9xuZRlkDNd-CctmIbsIW_U0Y3&font=Default&lang=en&initial_zoom=2&width=100%25&height=650"
-    allowfullscreen
-    frameborder="0">
-  </iframe>
+<!-- Подключение стилизации таймлайна -->
+<link rel="stylesheet" href="{{ "css/timeline.css" | relURL }}">
+
+<div id="map-container">
+  <div id="map-title">
+    <div class="title-text">A Timeline of Arabic Calligraphy</div>
+    <div class="title-divider"></div>
+  </div>
+
+  <div class="timeline-wrapper">
+    <div class="timeline-grid">
+       <!-- Hijazi -->
+      <div class="timeline-cell">
+        <div class="timeline-label"><span class="era">8th century</span><br><span class="era-ar">2nd AH</span></div>
+        <div class="timeline-indicator"></div>
+        <div class="timeline-marker">
+          <a href="https://judegor.github.io/calligraphy-across-caliphates/styles/hijazi/">Hijazi</a>
+        </div>
+      </div>
+
+      <!-- Kufic -->
+      <div class="timeline-cell">
+        <div class="timeline-label"><span class="era">9th century</span><br><span class="era-ar">2–3rd AH</span></div>
+        <div class="timeline-indicator"></div>
+        <div class="timeline-marker">
+          <a href="https://judegor.github.io/calligraphy-across-caliphates/styles/kufic/">Kufic</a>
+        </div>
+      </div>
+
+      <!-- Naskh -->
+      <div class="timeline-cell">
+        <div class="timeline-label"><span class="era">10th century</span><br><span class="era-ar">3rd AH</span></div>
+        <div class="timeline-indicator"></div>
+        <div class="timeline-marker">
+          <a href="https://judegor.github.io/calligraphy-across-caliphates/styles/naskh/">Naskh</a>
+        </div>
+      </div>
+
+      <!-- Muhaqqaq -->
+      <div class="timeline-cell">
+        <div class="timeline-label"><span class="era">10th century</span><br><span class="era-ar">4th AH</span></div>
+        <div class="timeline-indicator"></div>
+        <div class="timeline-marker">
+          <a href="https://judegor.github.io/calligraphy-across-caliphates/styles/muhaqqaq/">Muhaqqaq</a>
+        </div>
+      </div>
+
+      <!-- Thuluth -->
+      <div class="timeline-cell">
+        <div class="timeline-label"><span class="era">11th century</span><br><span class="era-ar">4–5th AH</span></div>
+        <div class="timeline-indicator"></div>
+        <div class="timeline-marker">
+          <a href="https://judegor.github.io/calligraphy-across-caliphates/styles/thuluth/">Thuluth</a>
+        </div>
+      </div>
+
+      <!-- Maghribi -->
+      <div class="timeline-cell">
+        <div class="timeline-label"><span class="era">11th century</span><br><span class="era-ar">4–5th AH</span></div>
+        <div class="timeline-indicator"></div>
+        <div class="timeline-marker">
+          <a href="https://judegor.github.io/calligraphy-across-caliphates/styles/maghribi/">Maghribi</a>
+        </div>
+      </div>
+
+      <!-- Nastaʿlīq -->
+      <div class="timeline-cell">
+        <div class="timeline-label"><span class="era">15th century</span><br><span class="era-ar">8th AH</span></div>
+        <div class="timeline-indicator"></div>
+        <div class="timeline-marker">
+          <a href="https://judegor.github.io/calligraphy-across-caliphates/styles/nastaliq/">Nastaʿlīq</a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="hijri-info" class="inline-hint">
+  <strong>What does <abbr title="Anno Hegirae">AH</abbr> mean?</strong><br>
+  AH stands for <em>Anno Hegirae</em>, "in the year of the Hijra" — the Islamic lunar calendar that begins in 622 CE,
+  marking the migration (<em>Hijra</em>) of the Prophet Muhammad from Mecca to Medina.
 </div>
 
 <style>
-#timeline-wrapper {
-  max-width: 96%;
-  margin: 60px auto;
-  background: url('{{ "images/pergament.jpg" | relURL }}') repeat;
-  border: 2px solid #bba88a;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  padding: 24px;
+  #map-container {
+    position: relative;
+    width: 96%;
+    margin: 40px auto 60px auto;
+    border-radius: 12px;
+    border: 2px solid rgba(210, 180, 140, 0.6);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    background-color: #e8d6c2;
+  }
+
+  #map-title {
+    padding: 30px 0 20px;
+    text-align: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom: 1px solid rgba(170, 140, 110, 0.4);
+    box-shadow: inset 0 -6px 10px rgba(0,0,0,0.05);
+    margin-bottom: 0;
+  }
+
+  .title-text {
+    font-size: 32px;
+    color: #2e1d12;
+    font-weight: bold;
+    line-height: 1.4;
+    font-family: 'EB Garamond', serif;
+  }
+
+  .title-divider {
+    margin: 16px auto 0 auto;
+    width: 160px;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, #a88a64 30%, #a88a64 70%, transparent);
+    opacity: 0.5;
+  }
+
+  .timeline-wrapper {
+    background: url('/images/papyrus-texture.jpg') center/cover;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.15);
+    overflow-x: auto;
+    position: relative;
+  }
+
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+    align-items: end;
+    position: relative;
+  }
+
+  .timeline-grid::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #8b5e3c;
+    border-radius: 2px;
+    z-index: 1;
+  }
+
+  .timeline-cell {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .timeline-label {
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    color: #5e4430;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .timeline-label .era {
+    font-weight: bold;
+    display: block;
+  }
+
+  .timeline-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #8b5e3c;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    z-index: 3;
+    position: relative;
+  }
+
+  .timeline-marker {
+    display: inline-block;
+    background: #fdf4ec;
+    border: 2px solid #c2a77e;
+    border-radius: 24px;
+    padding: 6px 14px;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.1rem;
+    color: #3e2b19;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, background 0.2s;
+    white-space: nowrap;
+    position: relative;
+    z-index: 3;
+  }
+
+  .timeline-marker:hover {
+    background: #fff8ef;
+    transform: translateY(-4px) scale(1.05);
+  }
+
+  .timeline-marker a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+.tooltip {
+  position: absolute;
+  background-color: #fffef8;
+  border: 1px solid #c2a77e;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  font-family: 'EB Garamond', serif;
+  color: #3e2b19;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  max-width: 300px;
+  line-height: 1.4;
+  z-index: 999;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
 }
-#timeline-title {
-  font-family: 'Amiri', serif;
-  font-size: 28px;
-  text-align: center;
-  color: #3a2d23;
-  margin-bottom: 20px;
+.inline-hint {
+  margin: 32px auto 0;
+  max-width: 760px;
+  background: #f7f0e7;
+  border: 1px solid #d2bfa2;
+  border-left: 4px solid #b89b7d;
+  padding: 14px 18px;
+  font-family: 'EB Garamond', serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #3c2b1a;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: left;
 }
-.timeline-embed {
-  width: 100%;
-  height: 650px;
-  border: none;
-  border-radius: 12px;
-  box-shadow: inset 0 0 24px rgba(0,0,0,0.1);
-  background: transparent;
+
+.inline-hint em {
+  font-style: italic;
+  color: #5e4430;
+}
+
+.inline-hint abbr {
+  text-decoration: underline dotted;
+  cursor: help;
+  font-weight: bold;
 }
 </style>
