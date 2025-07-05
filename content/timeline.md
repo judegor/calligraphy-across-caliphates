@@ -1,6 +1,6 @@
 ---
 title: "Timeline"
-url: "/timeline/"
 type: "timeline"
+url: "/timeline/"
 ---
 <!-- force rebuild -->
