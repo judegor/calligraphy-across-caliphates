@@ -24,12 +24,12 @@
   >
 
   <nav class="nav-menu">
-  <a href="https://aibaniz.github.io/calligraphy-across-caliphates/project"    class="nav-link">Project</a>
-  <a href="https://aibaniz.github.io/calligraphy-across-caliphates/timeline"   class="nav-link">Timeline</a>
-  <a href="https://aibaniz.github.io/calligraphy-across-caliphates/map"        class="nav-link">Map</a>
-  <a href="https://aibaniz.github.io/calligraphy-across-caliphates/references" class="nav-link">References</a>
-  <a href="https://aibaniz.github.io/calligraphy-across-caliphates/team"       class="nav-link">Team</a>
-  <a href="https://aibaniz.github.io/calligraphy-across-caliphates/"           class="nav-link" title="Home">
+  <a href="https://judegor.github.io/calligraphy-across-caliphates/project"    class="nav-link">Project</a>
+  <a href="https://judegor.github.io/calligraphy-across-caliphates/timeline"   class="nav-link">Timeline</a>
+  <a href="https://judegor.github.io/calligraphy-across-caliphates/map"        class="nav-link">Map</a>
+  <a href="https://judegor.github.io/calligraphy-across-caliphates/references" class="nav-link">References</a>
+  <a href="https://judegor.github.io/calligraphy-across-caliphates/team"       class="nav-link">Team</a>
+  <a href="https://judegor.github.io/calligraphy-across-caliphates/"           class="nav-link" title="Home">
     <img src="/calligraphy-across-caliphates/images/home-icon.svg" alt="Home" class="home-icon">
   </a>
 </nav>
@@ -40,14 +40,14 @@
 
   
 <main>
-  <h2 id="visualizing-calligraphy-across-regions">Visualizing Calligraphy Across Regions</h2>
-
+  
   <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/vis-timeline@latest/styles/vis-timeline-graph2d.min.css" rel="stylesheet" />
+<script src="https://unpkg.com/vis-timeline@latest/standalone/umd/vis-timeline-graph2d.min.js"></script>
 
 
 <style>
   body {
-    background-image: url('/calligraphy-across-caliphates/images/parchment-overlay.png');
     background-repeat: repeat;
     background-size: cover;
     background-blend-mode: multiply;
@@ -68,32 +68,78 @@
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
     overflow: hidden;
   }
+#map-title {
+  background: url('/calligraphy-across-caliphates/images/pergament.jpg') repeat;
+  padding: 30px 0 20px;
+  text-align: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom: 1px solid rgba(170, 140, 110, 0.4);
+  box-shadow: inset 0 -6px 10px rgba(0,0,0,0.05);
+  margin-bottom: 0;
+}
 
-  #map {
-    height: 600px;
-    opacity: 0;
-    transition: opacity 1s ease-in;
-    border-radius: 12px;
-    z-index: 0;
-  }
+.title-arabic {
+  font-size: 22px;
+  color: #a88a64;
+  direction: rtl;
+  margin-bottom: 8px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
 
+.title-text {
+  font-size: 32px;
+  color: #2e1d12;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.title-divider {
+  margin: 16px auto 0 auto;
+  width: 160px;
+  height: 1px;
+  background-image: linear-gradient(to right, transparent, #a88a64 30%, #a88a64 70%, transparent);
+  opacity: 0.5;
+}
+
+#map {
+  position: relative;
+  height: 600px;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  border-radius: 12px;
+  z-index: 0;
+}
   #map.loaded {
     opacity: 1;
   }
 
   #map-legend {
     position: absolute;
-    bottom: 20px;
+    bottom: 50px;
     right: 20px;
-    background: rgba(245, 235, 220, 0.92);
-    border: 1px solid #bba88a;
-    padding: 10px 14px;
-    border-radius: 8px;
-    font-family: 'Amiri', serif;
-    font-size: 14px;
-    color: #333;
-    z-index: 999;
-  }
+     background: rgba(255, 248, 240, 0.95);
+  border: 1px solid #ccbba0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-family: 'Amiri', serif;
+  font-size: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+}
+.leaflet-control-attribution {
+  font-family: 'Amiri', serif !important;
+  font-size: 14px !important;
+  color: #5c4a36 !important;
+  background: rgba(245, 235, 220, 0.85) !important;
+  border-radius: 8px !important;
+  padding: 6px 10px !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border: 1px dashed #bba88a;
+  direction: rtl;
+  text-align: right;
+}
 
   .dot {
     display: inline-block;
@@ -103,19 +149,20 @@
     margin-right: 6px;
   }
 
-  #filters {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(245, 235, 220, 0.9);
-    padding: 10px;
-    border: 1px solid #bba88a;
-    border-radius: 8px;
-    font-family: 'Amiri', serif;
-    font-size: 14px;
-    color: #333;
-    z-index: 1000;
-  }
+#filters {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  background: rgba(255, 248, 240, 0.95);
+  border: 1px solid #ccbba0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-family: 'Amiri', serif;
+  font-size: 15px;
+  color: #3a2d23;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+}
 
   #filters label {
     display: block;
@@ -156,21 +203,22 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  #reset-button {
-    position: absolute;
-    top: 20px;
-    right: 165px;
-    z-index: 1001;
-    background: rgba(245, 235, 220, 0.92);
-    border: 1px solid #bba88a;
-    border-radius: 6px;
-    padding: 5px 10px;
-    font-family: 'Amiri', serif;
-    font-size: 13px;
-    cursor: pointer;
-    color: #333;
-    transition: background 0.3s ease;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+#reset-button {
+  position: absolute;
+  top: 20px;
+  right: 165px;
+  z-index: 1001;
+background: linear-gradient(#f5ede2, #e4d4c2);
+  border: 1px solid #bba88a;
+  border-radius: 50px;
+  padding: 6px 16px;
+  font-family: 'Amiri', serif;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #3a2d23;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+  transition: background 0.3s ease;
   }
   #reset-button:hover {
     background: rgba(245, 235, 220, 1);
@@ -203,32 +251,23 @@
     background: #d4c4af;
     font-weight: bold;
   }
+
 </style>
 
 <div id="map-container">
-  <div id="reset-button">↺ Reset View</div>
-  <div id="filters"></div>
-  <div id="map"></div>
-  <div id="map-legend"></div>
+<div id="map-title">
+  <div class="title-arabic">الخط عبر الخلافات</div>
+  <div class="title-text">Visualizing Calligraphy Across Regions</div>
+  <div class="title-divider"></div>
 </div>
 
-<div id="timeline" style="margin: 20px auto; text-align: center; font-family: 'Amiri', serif;">
-  <button class="period-btn" data-period="late 7th c.">late 7th c.</button>
-  <button class="period-btn" data-period="10th c.">10th c.</button>
-  <button class="period-btn" data-period="10th–11th c.">10th–11th c.</button>
-  <button class="period-btn" data-period="11th c.">11th c.</button>
-  <button class="period-btn" data-period="11th–12th c.">11th–12th c.</button>
-  <button class="period-btn" data-period="12th c.">12th c.</button>
-  <button class="period-btn" data-period="13th c.">13th c.</button>
-  <button class="period-btn" data-period="13th–14th c.">13th–14th c.</button>
-  <button class="period-btn" data-period="13th–15th c.">13th–15th c.</button>
-  <button class="period-btn" data-period="14th–15th c.">14th–15th c.</button>
-  <button class="period-btn" data-period="15th c.">15th c.</button>
-  <button class="period-btn" data-period="16th c.">16th c.</button>
-  <button class="period-btn" data-period="16th–17th c.">16th–17th c.</button>
-  <button class="period-btn" data-period="17th c.">17th c.</button>
-  <button class="period-btn" data-period="18th–19th c.">18th–19th c.</button>
-  <button class="period-btn" data-period="19th c.">19th c.</button>
+  
+  <div id="map">
+    <div id="reset-button">↺ Reset View</div>
+    <div id="filters"></div>
+  </div>
+  
+  <div id="map-legend"></div>
 </div>
 
 
@@ -244,7 +283,7 @@ const initialView = {
 const map = L.map('map').setView(initialView.center, initialView.zoom);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: 'Map data © <span style="font-family:Amiri;">OpenStreetMap</span> contributors',
+attribution: '<span style="font-family:Amiri;">الخريطة © OpenStreetMap</span>',
   zIndex: 1
 }).addTo(map);
 
@@ -346,21 +385,6 @@ document.getElementById('reset-button').addEventListener('click', () => {
   map.setView(initialView.center, initialView.zoom, { animate: true });
 });
 
-
-const buttons = document.querySelectorAll('.period-btn');
-buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    buttons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    const selectedPeriod = btn.getAttribute('data-period');
-    Object.values(scriptGroups).flat().forEach(marker => map.removeLayer(marker));
-
-    if (periodGroups[selectedPeriod]) {
-      periodGroups[selectedPeriod].forEach(marker => marker.addTo(map));
-    }
-  });
-});
 </script>
 
 </main>
