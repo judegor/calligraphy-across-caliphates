@@ -1,8 +1,52 @@
-<link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Map – Calligraphy Across the Caliphates</title>
+  <link rel="icon" type="image/png" href="/calligraphy-across-caliphates/images/favicon.png" />
+
+  
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet" />
+
+  
+  <link rel="stylesheet" href="/calligraphy-across-caliphates/css/custom.css" />
+
+  
+</head>
+<body>
+  <header class="header-wrapper">
+  <h1 class="project-title">Calligraphy Across the Caliphates</h1>
+  <img
+    src="/calligraphy-across-caliphates/images/project_logo.png"
+    alt="Project Logo"
+    class="project-logo"
+  >
+
+  <nav class="nav-menu">
+  <a href="https://judegor.github.io/calligraphy-across-caliphates/project"    class="nav-link">Project</a>
+  <a href="https://judegor.github.io/calligraphy-across-caliphates/timeline"   class="nav-link">Timeline</a>
+  <a href="https://judegor.github.io/calligraphy-across-caliphates/map"        class="nav-link">Map</a>
+  <a href="https://judegor.github.io/calligraphy-across-caliphates/references" class="nav-link">References</a>
+  <a href="https://judegor.github.io/calligraphy-across-caliphates/team"       class="nav-link">Team</a>
+  <a href="https://judegor.github.io/calligraphy-across-caliphates/"           class="nav-link" title="Home">
+    <img src="/calligraphy-across-caliphates/images/home-icon.svg" alt="Home" class="home-icon">
+  </a>
+</nav>
+
+  <div class="curve"></div>
+</header>
+
+
+  
+<main>
+  <!-- force rebuild -->
+<!-- force rebuild -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/vis-timeline@latest/styles/vis-timeline-graph2d.min.css" rel="stylesheet" />
 <script src="https://unpkg.com/vis-timeline@latest/standalone/umd/vis-timeline-graph2d.min.js"></script>
 
-<!-- ✅ Стили -->
+
 <style>
   body {
     background-repeat: repeat;
@@ -26,7 +70,7 @@
     overflow: hidden;
   }
 #map-title {
-  background: url('{{ "images/pergament.jpg" | relURL }}') repeat;
+  background: url('/calligraphy-across-caliphates/images/pergament.jpg') repeat;
   padding: 30px 0 20px;
   text-align: center;
   border-top-left-radius: 12px;
@@ -226,7 +270,7 @@ background: linear-gradient(#f5ede2, #e4d4c2);
   <div id="map-legend"></div>
 </div>
 
-<!-- Leaflet -->
+
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
@@ -244,7 +288,7 @@ attribution: '<span style="font-family:Amiri;">الخريطة © OpenStreetMap</
 }).addTo(map);
 
 const papyrus = L.imageOverlay(
-  '{{ "images/papyrus-texture.jpg" | relURL }}',
+  '\/calligraphy-across-caliphates\/images\/papyrus-texture.jpg',
   [[-90, -180], [90, 180]],
   {
     opacity: 0.4,
@@ -261,7 +305,7 @@ const scriptGroups = {};
 const periodGroups = {};
 let resetTimeout = null;
 
-fetch('{{ "data/mapdata.json" | relURL }}')
+fetch('\/calligraphy-across-caliphates\/data\/mapdata.json')
   .then(response => response.json())
   .then(data => {
     const legend = document.getElementById('map-legend');
@@ -342,3 +386,12 @@ document.getElementById('reset-button').addEventListener('click', () => {
 });
 
 </script>
+
+</main>
+
+
+  <footer>
+    <p>&copy; 2025 Calligraphy Across the Caliphates</p>
+  </footer>
+</body>
+</html>

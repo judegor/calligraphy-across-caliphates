@@ -1,0 +1,296 @@
+/* --- GLOBAL FONT IMPORT (insert into head of baseof.html) ---
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+*/
+
+/* --- GLOBAL STYLES --- */
+body {
+  background-color: #d7c7b4;
+  margin: 0;
+  font-family: 'EB Garamond', serif;
+}
+
+/* --- HEADER --- */
+.header-wrapper {
+  background-color: #1e426a;
+  text-align: center;
+  padding: 0.5rem 1rem 2rem;
+  color: #e4ddd5;
+}
+
+.project-title {
+  font-family: 'EB Garamond', serif;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.project-logo {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- HOME ICON --- */
+.home-icon {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  margin-top: -12px; /* Adjust this value if needed */
+  display: inline-block;
+}
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  gap: 1.9rem;
+  flex-wrap: wrap;
+  margin-top: 0.3rem;
+}
+
+.nav-link {
+  color: #e0d8c3;
+  text-decoration: none;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.4rem;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+/* --- PROJECT DESCRIPTION --- */
+.project-description {
+  font-size: 1.10rem;
+  font-family: 'EB Garamond', serif;
+  color: #111110;
+  margin: 1.2rem auto 0.3rem;
+  max-width: 720px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* --- HOMEPAGE WRAPPER --- */
+.homepage-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.3rem 1rem 2rem;
+  text-align: center;
+}
+
+/* --- GRID OF STYLES --- */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.grid-box {
+  height: 200px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-box:hover {
+  transform: scale(1.03);
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.grid-box:hover .grid-overlay {
+  opacity: 1;
+}
+
+.grid-label {
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.1s;
+}
+
+.grid-box:hover .grid-label {
+  opacity: 1;
+}
+
+/* --- STYLE BOX BACKGROUNDS --- */
+.kufic-box    { background-image: url('/images/kufic.jpg'); }
+.naskh-box    { background-image: url('/images/naskh.jpg'); }
+.thuluth-box  { background-image: url('/images/thuluth.jpg'); }
+.maghribi-box { background-image: url('/images/maghribi.jpg'); }
+.nastaliq-box { background-image: url('/images/nastaliq.jpg'); }
+.muhaqqaq-box { background-image: url('/images/muhaqqaq.jpg'); }
+
+/* --- INDIVIDUAL STYLE PAGES --- */
+.style-header {
+  position: relative;
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.style-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.style-header-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.style-title {
+  color: white;
+  font-size: 2.8rem;
+  font-family: 'Playfair Display', serif;
+  text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+/* --- STYLE PAGE BODY --- */
+.style-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.style-content p,
+.style-content h1,
+.style-content h2,
+.style-content h3,
+.style-content ul,
+.style-content li {
+  text-align: left !important;
+}
+
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* --- STYLE PAGE GALLERY --- */
+.style-gallery {
+  max-width: 1000px;
+  margin: 2rem auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0;
+  box-sizing: border-box;
+  position: relative;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.style-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.style-gallery-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  padding: 0 1rem;
+}
+
+.style-gallery-track a {
+  flex-shrink: 0;
+  display: block;
+}
+
+.style-gallery-track img {
+  height: 180px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
+.style-gallery::before,
+.style-gallery::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.style-gallery::before {
+  left: 0;
+  background: linear-gradient(to right, #d7c7b4, transparent);
+}
+
+.style-gallery::after {
+  right: 0;
+  background: linear-gradient(to left, #d7c7b4, transparent);
+}
+
+/* --- MOBILE TWEAKS --- */
+@media (max-width: 600px) {
+  .style-title {
+    font-size: 1.8rem;
+  }
+
+  .project-title {
+    font-size: 2.2rem;
+  }
+
+  .project-description {
+    font-size: 1.05rem;
+    padding: 0 1rem;
+  }
+
+  .grid-box {
+    height: 180px;
+  }
+
+  .nav-menu {
+    gap: 1rem;
+    flex-direction: column;
+  }
+}
+
+/* --- TIMELINE EMBED --- */
+.timeline-container {
+  width: 90%;
+  margin: 2rem 0;
+  padding: 0;
+}
