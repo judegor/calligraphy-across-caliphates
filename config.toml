@@ -1,4 +1,4 @@
-baseURL = "https://judegor.github.io/calligraphy-across-caliphates/"
+baseURL = "https://github.com/aibaniz/calligraphy-across-caliphates"
 publishDir = "docs"
 languageCode = 'en-us'
 title = 'Calligraphy Across the Caliphates'
