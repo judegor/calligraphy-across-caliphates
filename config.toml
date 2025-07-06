@@ -1,5 +1,4 @@
-baseURL = "https://aibaniz.github.io/calligraphy-across-caliphates"
-publishDir = "docs"
+baseURL = "https://aibaniz.github.io/calligraphy-across-caliphates/"
 languageCode = 'en-us'
 title = 'Calligraphy Across the Caliphates'
 enableRobotsTXT = true
