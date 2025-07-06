@@ -22,3 +22,7 @@ The project is built with:
 - **Style Galleries:** Browse curated examples of Kufic, Naskh, Thuluth, and more.
 - **Contextual Essays:** Learn about the cultural and historical significance of each script.
 - **Open Access References:** Links to digitized collections (e.g., The Met, Library of Congress).
+
+## Acknowledgments
+
+This website was created as the final project for the course *Digital Humanities and Data Sustainability: A Hands-on Practical Approach*, taught by **Dr. Christian Casey** at Freie Universität Berlin during the Summer Semester 2025.
