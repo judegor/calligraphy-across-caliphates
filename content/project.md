@@ -4,12 +4,9 @@ title: "Project"
 
 ## About the Project
 
-This digital humanities project explores the evolution, style, and geographical spread of Islamic calligraphy from the 7th to the 19th century. 
+This digital humanities project explores the evolution, styles, and geographical spread of Islamic calligraphy from the 7th to the 19th century. Our goal is to provide an accessible and scholarly overview of diverse calligraphic traditions across regions and historical periods.
 
-Our goal is to provide an accessible, visual, and scholarly overview of various calligraphic traditions across regions and time periods.
+By combining academic research with digital tools, the site makes the richness of Islamic calligraphy visible to a broad audience.
 
-This site combines academic research with digital tools to make the richness of Islamic calligraphy visible to broader audiences.
-
-This website was created as the final project for the course Digital Humanities and Data Sustainability: A Hands-on Practical Approach, taught by Dr. Christian Casey at Freie Universität Berlin during the Summer Semester 2025.
-
+This project was created as the final assignment for [*Digital Humanities and Data Sustainability: A Hands-on Practical Approach*](https://github.com/14143-DH-Sustainability), taught by Dr. Christian Casey at Freie Universität Berlin in Summer Semester 2025.
 
