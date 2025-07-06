@@ -9,3 +9,7 @@ This digital humanities project explores the evolution, style, and geographical 
 Our goal is to provide an accessible, visual, and scholarly overview of various calligraphic traditions across regions and time periods.
 
 This site combines academic research with digital tools to make the richness of Islamic calligraphy visible to broader audiences.
+
+This website was created as the final project for the course Digital Humanities and Data Sustainability: A Hands-on Practical Approach, taught by Dr. Christian Casey at Freie Universität Berlin during the Summer Semester 2025.
+
+
