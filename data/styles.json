@@ -1,0 +1,8 @@
+[
+  { "slug": "kufic", "name": "Kufic" },
+  { "slug": "naskh", "name": "Naskh" },
+  { "slug": "muhaqqaq", "name": "Muhaqqaq" },
+  { "slug": "thuluth", "name": "Thuluth" },
+  { "slug": "maghribi", "name": "Maghribi" },
+  { "slug": "nastaliq", "name": "Nastaʿlīq" }
+]

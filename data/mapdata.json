@@ -1,0 +1,278 @@
+[
+  {
+    "script": "Kufic",
+    "description": "Earliest Islamic inscriptions",
+    "color": "#6B4226",
+    "locations": [
+      {
+        "name": "Dome of the Rock, Jerusalem",
+        "lat": 31.778,
+        "lng": 35.2351,
+        "period": "late 7th c."
+      },
+      {
+        "name": "Damghan (Tomb of Pir Alamdār)",
+        "lat": 36.167,
+        "lng": 54.348,
+        "period": "11th c."
+      },
+      {
+        "name": "Cordoba",
+        "lat": 37.8882,
+        "lng": -4.7794,
+        "period": "10th c."
+      },
+      {
+        "name": "Marrakesh (Kutubiyya Mosque)",
+        "lat": 31.6295,
+        "lng": -7.9811,
+        "period": "12th c."
+      },
+      {
+        "name": "Nishapur",
+        "lat": 36.2133,
+        "lng": 58.7958,
+        "period": "10th–11th c."
+      },
+      {
+        "name": "Rayy",
+        "lat": 35.5779,
+        "lng": 51.4372,
+        "period": "10th–11th c."
+      },
+      {
+        "name": "Isfahan",
+        "lat": 32.6525,
+        "lng": 51.6746,
+        "period": "10th–11th c."
+      },
+      {
+        "name": "Bukhara",
+        "lat": 39.7745,
+        "lng": 64.4281,
+        "period": "10th–11th c."
+      },
+      {
+        "name": "Ghazni",
+        "lat": 33.5539,
+        "lng": 68.42,
+        "period": "11th–12th c."
+      },
+      {
+        "name": "Konya – Karatay Madrasa",
+        "lat": 37.8715,
+        "lng": 32.4846,
+        "period": "13th c."
+      },
+      {
+        "name": "Konya – Ince Minare",
+        "lat": 37.874,
+        "lng": 32.4932,
+        "period": "13th c."
+      }
+    ]
+  },
+  {
+    "script": "Naskh",
+    "description": "Popular in Qurʾans and manuscripts",
+    "color": "#4F6D7A",
+    "locations": [
+      {
+        "name": "Cairo",
+        "lat": 30.0444,
+        "lng": 31.2357,
+        "period": "13th–15th c."
+      },
+      {
+        "name": "Baghdad",
+        "lat": 33.3152,
+        "lng": 44.3661,
+        "period": "13th–14th c."
+      },
+      {
+        "name": "Alexandria",
+        "lat": 31.2001,
+        "lng": 29.9187,
+        "period": "14th–15th c."
+      },
+      {
+        "name": "Herat",
+        "lat": 34.3529,
+        "lng": 62.204,
+        "period": "15th c."
+      },
+      {
+        "name": "Mashhad",
+        "lat": 36.2605,
+        "lng": 59.6168,
+        "period": "16th c."
+      },
+      {
+        "name": "Istanbul",
+        "lat": 41.0082,
+        "lng": 28.9784,
+        "period": "16th–17th c."
+      }
+    ]
+  },
+  {
+    "script": "Muhaqqaq",
+    "description": "Used for important manuscripts",
+    "color": "#7C3A2D",
+    "locations": [
+      {
+        "name": "Baghdad",
+        "lat": 33.3128,
+        "lng": 44.3615,
+        "period": "13th–14th c."
+      },
+      {
+        "name": "Cairo – Ahmad al-Mutatabbib",
+        "lat": 30.0444,
+        "lng": 31.2357,
+        "period": "13th–15th c."
+      },
+      {
+        "name": "Syria",
+        "lat": 33.5138,
+        "lng": 36.2765,
+        "period": "13th–14th c."
+      }
+    ]
+  },
+  {
+    "script": "Thuluth",
+    "description": "Monumental inscriptions and decoration",
+    "color": "#5D3A9B",
+    "locations": [
+      {
+        "name": "Istanbul",
+        "lat": 41.0082,
+        "lng": 28.9784,
+        "period": "16th–17th c."
+      },
+      {
+        "name": "Sinjar",
+        "lat": 36.3167,
+        "lng": 41.8667,
+        "period": "13th c."
+      },
+      {
+        "name": "Dawlatabad",
+        "lat": 27.0286,
+        "lng": 75.597,
+        "period": "14th c."
+      },
+      {
+        "name": "Cairo – Mamluk use",
+        "lat": 30.0444,
+        "lng": 31.2357,
+        "period": "14th–15th c."
+      },
+      {
+        "name": "Konya",
+        "lat": 37.8715,
+        "lng": 32.4846,
+        "period": "13th c."
+      }
+    ]
+  },
+  {
+    "script": "Maghribi",
+    "description": "Western Islamic calligraphy",
+    "color": "#2E8B57",
+    "locations": [
+      {
+        "name": "Fez",
+        "lat": 34.0331,
+        "lng": -5.0,
+        "period": "14th–15th c."
+      },
+      {
+        "name": "Cordoba",
+        "lat": 37.8882,
+        "lng": -4.7794,
+        "period": "10th c."
+      },
+      {
+        "name": "Marrakesh",
+        "lat": 31.6295,
+        "lng": -7.9811,
+        "period": "12th c."
+      },
+      {
+        "name": "Kuwait City",
+        "lat": 29.3759,
+        "lng": 47.9774,
+        "period": "18th–19th c."
+      },
+      {
+        "name": "Seville",
+        "lat": 37.3891,
+        "lng": -5.9845,
+        "period": "10th–11th c."
+      },
+      {
+        "name": "Valencia",
+        "lat": 39.4699,
+        "lng": -0.3763,
+        "period": "10th–11th c."
+      },
+      {
+        "name": "Ceuta",
+        "lat": 35.8894,
+        "lng": -5.3213,
+        "period": "10th–11th c."
+      },
+      {
+        "name": "Malaga",
+        "lat": 36.7213,
+        "lng": -4.4214,
+        "period": "10th–11th c."
+      }
+    ]
+  },
+  {
+    "script": "Nastaʿlīq",
+    "description": "Used for Persian and Urdu literature",
+    "color": "#8B5E3C",
+    "locations": [
+      {
+        "name": "Isfahan",
+        "lat": 32.6525,
+        "lng": 51.6746,
+        "period": "17th c."
+      },
+      {
+        "name": "Herat",
+        "lat": 34.3529,
+        "lng": 62.204,
+        "period": "15th c."
+      },
+      {
+        "name": "Tabriz",
+        "lat": 38.0962,
+        "lng": 46.2738,
+        "period": "15th c."
+      },
+      {
+        "name": "Tehran",
+        "lat": 35.6892,
+        "lng": 51.389,
+        "period": "19th c."
+      },
+      {
+        "name": "Bursa – Ulu Cami",
+        "lat": 40.1826,
+        "lng": 29.066,
+        "period": "15th c."
+      },
+      {
+        "name": "Istanbul – Sheykh al-Islam",
+        "lat": 41.0082,
+        "lng": 28.9784,
+        "period": "16th c."
+      }
+    ]
+  }
+]

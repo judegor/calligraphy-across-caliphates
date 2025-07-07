@@ -1,0 +1,21 @@
+<header class="header-wrapper">
+  <h1 class="project-title">{{ .Site.Title }}</h1>
+  <img
+    src="{{ "images/project_logo.png" | relURL }}"
+    alt="Project Logo"
+    class="project-logo"
+  >
+
+  <nav class="nav-menu">
+  <a href="{{ "project" | absURL }}"    class="nav-link">Project</a>
+  <a href="{{ "timeline" | absURL }}"   class="nav-link">Timeline</a>
+  <a href="{{ "map" | absURL }}"        class="nav-link">Map</a>
+  <a href="{{ "references" | absURL }}" class="nav-link">References</a>
+  <a href="{{ "team" | absURL }}"       class="nav-link">Team</a>
+  <a href="{{ "" | absURL }}"           class="nav-link" title="Home">
+    <img src="{{ "images/home-icon.svg" | relURL }}" alt="Home" class="home-icon">
+  </a>
+</nav>
+
+  <div class="curve"></div>
+</header>
